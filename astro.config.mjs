@@ -15,9 +15,10 @@ export default defineConfig({
   },
   // i18n: {
   //   defaultLocale: "en",
-  //   locales: ["en", "fr"],
+  //   locales: ["en", "fr", "de"],
   //   fallback: {
   //     fr: "en",
+  //     de: "en",
   //   },
   //   routing: {
   //     prefixDefaultLocale: false,
@@ -30,6 +31,7 @@ export default defineConfig({
       locales: {
         en: "en", // The `defaultLocale` value must present in `locales` keys
         fr: "fr",
+        de: "de",
       },
     },
   }), starlight({
