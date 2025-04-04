@@ -20,6 +20,7 @@ import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
 import { partnersData } from "@/data_files/constants";
+import QuoteSection from "@components/sections/landing/QuoteSection.astro";
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -37,8 +38,12 @@ const avatarSrcs: Array<string> = [
   /> -->
 
   <LandingOpener
-    description="Life Profoundness is an invitation to humanity to curate an architectural design on Earth, that facilitates the evolution of human consciousness within a goal-less setup.<br /><br />The framework underpinning this architectural design is inspired from the author's upcoming book — 'Waking up in the matrix'."
-    imageAlt="Life Profoundness Logo"
+    description="Life Profoundness is an invitation to humanity to curate an Architectural Design on Earth, that facilitates the evolution of human consciousness within a goal-less setup.<br /><br />The framework underpinning this architectural design is inspired from the author's upcoming book — 'Waking up in the matrix'."
+  />
+  <QuoteSection
+    quote="The journey of self-discovery is not about finding yourself, but about creating yourself."
+    author="George Bernard Shaw"
+    authorTitle="Physician & Author"
   />
 
   <HeroSection
