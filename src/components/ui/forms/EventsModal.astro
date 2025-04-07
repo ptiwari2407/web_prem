@@ -1,0 +1,70 @@
+---
+const config = {
+  id: "events-modal",
+  title: "Upcoming Events",
+};
+
+// You can add your events data here or fetch it from your data files
+const events = [
+  {
+    title: "Consciousness Workshop",
+    date: "March 15, 2024",
+    time: "10:00 AM - 2:00 PM",
+    location: "Virtual Event",
+    description: "Join us for an immersive workshop exploring consciousness and self-discovery."
+  },
+  {
+    title: "Matrix Understanding Session",
+    date: "March 20, 2024",
+    time: "3:00 PM - 5:00 PM",
+    location: "Life Profoundness Center",
+    description: "Deep dive into understanding the matrix and its implications on human consciousness."
+  }
+];
+---
+
+<div
+  id={config.id}
+  class="hs-overlay absolute start-0 top-0 z-50 hidden h-full w-full hs-overlay-backdrop-open:bg-neutral-900/90"
+>
+  <div
+    class="m-3 mt-0 opacity-0 transition-all ease-out hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 sm:mx-auto sm:w-full sm:max-w-lg"
+  >
+    <div class="mx-auto w-full max-w-md p-6">
+      <div
+        class="mt-7 rounded-xl border border-neutral-200 bg-neutral-100 shadow-xs dark:border-neutral-700 dark:bg-neutral-800"
+      >
+        <div class="p-4 sm:p-7">
+          <div class="text-center">
+            <h2
+              class="block text-2xl font-bold text-neutral-800 dark:text-neutral-200"
+            >
+              {config.title}
+            </h2>
+          </div>
+          
+          <div class="mt-5 space-y-6">
+            {events.map((event) => (
+              <div class="rounded-lg border border-neutral-200 p-4 dark:border-neutral-700">
+                <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
+                  {event.title}
+                </h3>
+                <div class="mt-2 space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+                  <p>📅 {event.date}</p>
+                  <p>⏰ {event.time}</p>
+                  <p>📍 {event.location}</p>
+                  <p class="mt-2">{event.description}</p>
+                </div>
+                <button
+                  class="mt-3 w-full rounded-md bg-orange-500 px-4 py-2 text-sm font-semibold text-white hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700"
+                >
+                  Register Now
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
