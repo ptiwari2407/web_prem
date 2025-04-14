@@ -1,0 +1,51 @@
+---
+import Icon from "@components/ui/icons/Icon.astro";
+
+interface Props {
+  name: string;
+  items: {
+    name: string;
+    url: string;
+  }[];
+}
+
+const { name, items } = Astro.props;
+---
+
+<div class="hs-dropdown relative inline-flex">
+  <button
+    type="button"
+    class="hs-dropdown-toggle inline-flex items-center gap-x-2 text-sm font-medium text-neutral-600 hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-500"
+  >
+    {name}
+    <Icon name="chevronDown" />
+  </button>
+
+  <div
+    class="hs-dropdown-menu absolute z-50 mt-2 min-w-[15rem] rounded-lg bg-white p-2 opacity-0 shadow-md transition-[opacity,margin] duration-300 before:absolute before:-top-2 before:start-0 before:h-2 before:w-full hs-dropdown-open:opacity-100 dark:bg-neutral-800 dark:border dark:border-neutral-700"
+    style="position: absolute; top: 100%; left: 0; display: none;"
+  >
+    <div class="py-2 first:pt-0 last:pb-0">
+      {
+        items.map((item) => (
+          <a
+            class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:outline-none focus:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300"
+            href={item.url}
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  import 'preline/dist/preline.js';
+  
+  // Initialize Preline
+  document.addEventListener('DOMContentLoaded', () => {
+    // @ts-ignore
+    HSDropdown.init();
+  });
+</script> 

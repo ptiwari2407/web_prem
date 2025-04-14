@@ -25,6 +25,7 @@ export default defineConfig({
   //   },
   // },
   prefetch: true,
+  viewTransitions: true,
   integrations: [sitemap({
     i18n: {
       defaultLocale: "en", // All urls that don't contain `fr` after `https://screwfast.uk/` will be treated as default locale, i.e. `en`
